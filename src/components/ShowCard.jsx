@@ -39,7 +39,7 @@ const ShowCardContent = () => {
   );
 };
 
-const ShowCard = ({data}) => {
+const ShowCard = ({data }) => {
   return (
     <ShowProvider data={data}>
       <ShowCardContent />
