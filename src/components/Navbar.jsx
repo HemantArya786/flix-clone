@@ -8,7 +8,7 @@ export default function Navbar() {
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
 
   return (
-    <nav className=" text-white px-4 py-3 flex items-center justify-between">
+    <nav className=" text-white px-20 py-6 flex items-center justify-between">
       {/* Left side - Logo and Navigation */}
       <div className="flex items-center space-x-8">
         {/* Netflix Logo */}
