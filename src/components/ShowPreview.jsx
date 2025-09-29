@@ -10,6 +10,14 @@ function ShowPreview() {
         <div className="w-full">
           <PreviewHeroSection />
           <EpisodeCard />
+          <EpisodeCard />
+          <EpisodeCard />
+
+          <EpisodeCard />
+
+          <EpisodeCard />
+
+          <EpisodeCard />
         </div>
       </div>
     </div>

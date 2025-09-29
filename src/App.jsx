@@ -10,6 +10,7 @@ import MoviesPage from "./pages/MoviesPage.jsx";
 import GamesPage from "./pages/GamesPage.jsx";
 import BrowseByLanguages from "./pages/BrowseByLanguages.jsx";
 import MyListPage from "./pages/MyListPage.jsx";
+import NotFoundPage from './pages/NotFoundPage.jsx'
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
                         <Route path="/games" element={<GamesPage />} />
                         <Route path="/browse-by-langauage" element={<BrowseByLanguages />} />
                         <Route path="/my-list" element={<MyListPage />} />
+                        <Route path="*" element={<NotFoundPage />} />
                         <Route path="/home" element={<HomePage />} />
                     </Routes>
                 </div>
