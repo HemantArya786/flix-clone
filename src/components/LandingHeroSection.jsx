@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function LandingHeroSection() {
   const [email, setEmail] = useState('');
-
+const navigate = useNavigate();
   const handleGetStarted = (e) => {
     e.preventDefault();
     console.log('Get started with email:', email);
+    navigate('/signin')
   };
 
   return (

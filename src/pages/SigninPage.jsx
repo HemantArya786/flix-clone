@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 export default function SigninPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
-
+  const navigate = useNavigate();
   const handleSignIn = (e) => {
     e.preventDefault();
     console.log('Sign in with:', { email, password, rememberMe });
+    navigate('/home')
   };
 
   const handleSignInCode = () => {
     console.log('Use sign-in code');
+    navigate('/home')
   };
 
   return (

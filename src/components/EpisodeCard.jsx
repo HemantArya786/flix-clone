@@ -3,15 +3,15 @@ import { useShow } from "../hooks/useShow";
 export default function EpisodeCard() {
   const { data } = useShow();
   return (
-    <div className="bg-[#333333] text-white p-4 max-w-4xl mx-auto">
-      <div className="flex items-center gap-4">
+    <div className=" text-white  p-4 max-w-4xl mx-auto">
+      <div className="flex items-center gap-4 border-b pb-5 border-gray-200">
         {/* Episode Number */}
         <div className="text-2xl font-light text-gray-300 min-w-[45px]">
           3
         </div>
         
         {/* Thumbnail */}
-        <div className="relative w-30 h-20 bg-gray-800 rounded overflow-hidden flex-shrink-0">
+        <div className="relative w-40 h-20  rounded overflow-hidden flex-shrink-0">
           <img 
             src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=face" 
             alt="Episode thumbnail"
