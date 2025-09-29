@@ -13,30 +13,31 @@ export default function Navbar() {
       <div className="flex items-center space-x-8">
         {/* Netflix Logo */}
         <div className="text-red-600 font-bold text-2xl tracking-tight">
-          NETFLIX
+            <Link to="/home">          NETFLIX
+            </Link>
         </div>
         
         {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link to={"/"} className="text-white hover:text-gray-300 transition-colors">
+          <Link to={"/home"} className="text-white hover:text-gray-300 transition-colors">
             Home
           </Link>
-          <Link to={"/"} className="text-gray-300 hover:text-white transition-colors">
+          <Link to={"/shows"} className="text-gray-300 hover:text-white transition-colors">
             Shows
           </Link>
-          <Link to={"/"} className="text-gray-300 hover:text-white transition-colors">
+          <Link to={"/movies"} className="text-gray-300 hover:text-white transition-colors">
             Movies
           </Link>
-          <Link to={"/"} className="text-gray-300 hover:text-white transition-colors">
+          <Link to={"games"} className="text-gray-300 hover:text-white transition-colors">
             Games
           </Link>
-          <Link to={"/"} className="text-gray-300 hover:text-white transition-colors">
+          <Link to={"/new-and-popular"} className="text-gray-300 hover:text-white transition-colors">
             New & Popular
           </Link>
-          <Link to={"/"} className="text-gray-300 hover:text-white transition-colors">
+          <Link to={"/my-list"} className="text-gray-300 hover:text-white transition-colors">
             My List
           </Link>
-          <Link to={"/"} className="text-gray-300 hover:text-white transition-colors">
+          <Link to={"/browse-by-language"} className="text-gray-300 hover:text-white transition-colors">
             Browse by Languages
           </Link>
         </div>

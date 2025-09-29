@@ -67,7 +67,7 @@ function HomePage() {
       <HeroSection />
 
       <section className="p-10">
-        <h1 className="text-5xl text-white py-5 ">TV Action & Adventure</h1>
+        <h1 className="text-xl text-white py-5 ">TV Action & Adventure</h1>
         <div className="flex gap-5 ">
           {shows.map((item, index) => (
             <ShowCard
@@ -82,7 +82,7 @@ function HomePage() {
       <NumericCard />
 
       <section className="p-10">
-        <h1 className="text-5xl text-white py-5 ">TV Action & Adventure</h1>
+        <h1 className="text-xl text-white py-5 ">TV Action & Adventure</h1>
         <div className="flex gap-5 ">
           {shows.map((item, index) => (
             <ShowCard
@@ -94,7 +94,7 @@ function HomePage() {
         </div>
       </section>
       <section className="p-10">
-        <h1 className="text-5xl text-white py-5 ">TV Action & Adventure</h1>
+        <h1 className="text-xl text-white py-5 ">TV Action & Adventure</h1>
         <div className="flex gap-5 ">
           {shows.map((item, index) => (
             <ShowCard
@@ -106,7 +106,7 @@ function HomePage() {
         </div>
       </section>
       <section className="p-10">
-        <h1 className="text-5xl text-white py-5 ">TV Action & Adventure</h1>
+        <h1 className="text-xl text-white py-5 ">TV Action & Adventure</h1>
         <div className="flex gap-5 ">
           {shows.map((item, index) => (
             <ShowCard
