@@ -33,7 +33,8 @@ export default function Navbar() {
   useEffect(() => {
     function handleScroll() {
       const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 0);
+      const halfPageHeight = window.innerHeight / 2;
+      setIsScrolled(scrollPosition > halfPageHeight);
     }
 
     window.addEventListener('scroll', handleScroll);
@@ -44,7 +45,7 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 text-white px-20 py-6 flex items-center justify-between transition-colors duration-300 ${
-      isScrolled ? 'bg-black' : 'bg-black/80'
+      isScrolled ? 'bg-black' : 'bg-black/60'
     }`}>
       {/* Left side - Logo and Navigation */}
       <div className="flex items-center space-x-8">

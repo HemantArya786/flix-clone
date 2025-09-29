@@ -2,76 +2,37 @@ import React from "react";
 import HeroSection from "../components/HeroSection";
 import ShowCard from "../components/ShowCard";
 import NumericCard from "../components/NumericCard";
+import { useShows } from "../context/ShowsContext";
 
 function HomePage() {
-  const shows = [
-    {
-      title: "Heartstopper",
-      image:
-        "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=400&h=300&fit=crop",
-      video:
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-      rating: "U/A 16+",
-      seasons: "4 Seasons",
-      genres: ["Nostalgic", "Ominous", "Sci-Fi TV"],
-      isNew: true,
-    },
-    {
-      title: "Money Heist",
-      image:
-        "https://images.unsplash.com/photo-1489599142406-ba4bb7abaa98?w=400&h=300&fit=crop",
-      video:
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-      rating: "U/A 16+",
-      seasons: "5 Seasons",
-      genres: ["Crime", "Thriller", "Drama"],
-      isNew: false,
-    },
-    {
-      title: "Stranger Things",
-      image:
-        "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&h=300&fit=crop",
-      video:
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-      rating: "U/A 16+",
-      seasons: "4 Seasons",
-      genres: ["Nostalgic", "Ominous", "Sci-Fi TV"],
-      isNew: false,
-    },
-    {
-      title: "Stranger Things",
-      image:
-        "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&h=300&fit=crop",
-      video:
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-      rating: "U/A 16+",
-      seasons: "4 Seasons",
-      genres: ["Nostalgic", "Ominous", "Sci-Fi TV"],
-      isNew: false,
-    },
-    {
-      title: "The Crown",
-      image:
-        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=300&fit=crop",
-      video:
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      rating: "U/A 13+",
-      seasons: "6 Seasons",
-      genres: ["Period Drama", "Historical", "Royal"],
-      isNew: true,
-    },
-  ];
+  const { shows, loading, error } = useShows();
+
+  if (loading) {
+    return (
+      <div className="min-h-[100vh] flex items-center justify-center bg-black">
+        <div className="text-white text-xl">Loading shows...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-[100vh] flex items-center justify-center bg-black">
+        <div className="text-red-500 text-xl">Error loading shows: {error}</div>
+      </div>
+    );
+  }
 
   return (
-    <div className=" min-h-[100vh]">
+    <div className="min-h-[100vh] bg-black ">
       <HeroSection />
 
       <section className="p-10">
-        <h1 className="text-xl text-white py-5 ">TV Action & Adventure</h1>
-        <div className="flex gap-5 ">
-          {shows.map((item, index) => (
+        <h1 className="text-xl text-white py-5">TV Action & Adventure</h1>
+        <div className="flex gap-7">
+          {shows?.map((item, index) => (
             <ShowCard
-              key={index}
+              key={item.id || index}
               data={item}
               listTitle={"TV Action & Adventure"}
             />
@@ -80,43 +41,6 @@ function HomePage() {
       </section>
 
       <NumericCard />
-
-      <section className="p-10">
-        <h1 className="text-xl text-white py-5 ">TV Action & Adventure</h1>
-        <div className="flex gap-5 ">
-          {shows.map((item, index) => (
-            <ShowCard
-              key={index}
-              data={item}
-              listTitle={"TV Action & Adventure"}
-            />
-          ))}
-        </div>
-      </section>
-      <section className="p-10">
-        <h1 className="text-xl text-white py-5 ">TV Action & Adventure</h1>
-        <div className="flex gap-5 ">
-          {shows.map((item, index) => (
-            <ShowCard
-              key={index}
-              data={item}
-              listTitle={"TV Action & Adventure"}
-            />
-          ))}
-        </div>
-      </section>
-      <section className="p-10">
-        <h1 className="text-xl text-white py-5 ">TV Action & Adventure</h1>
-        <div className="flex gap-5 ">
-          {shows.map((item, index) => (
-            <ShowCard
-              key={index}
-              data={item}
-              listTitle={"TV Action & Adventure"}
-            />
-          ))}
-        </div>
-      </section>
     </div>
   );
 }
