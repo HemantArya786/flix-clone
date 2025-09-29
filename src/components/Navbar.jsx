@@ -30,23 +30,49 @@ export default function Navbar() {
   }, []);
 
   // Handle scroll to change navbar background
-  useEffect(() => {
-    function handleScroll() {
-      const scrollPosition = window.scrollY;
-      const halfPageHeight = window.innerHeight / 2;
-      setIsScrolled(scrollPosition > halfPageHeight);
-    }
+  // useEffect(() => {
+  //   function handleScroll() {
+  //     const scrollPosition = window.scrollY;
+  //     const halfPageHeight = window.innerHeight / 2;
+  //     setIsScrolled(scrollPosition > halfPageHeight);
+  //   }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
+
+
+  useEffect(() => {
+  function handleScroll() {
+    const scrollPosition = window.scrollY;
+    setIsScrolled(scrollPosition > 10); // Change as soon as user scrolls a little
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
+
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 text-white px-20 py-6 flex items-center justify-between transition-colors duration-300 ${
-      isScrolled ? 'bg-black' : 'bg-black/60'
-    }`}>
+    // <nav className={`fixed top-0 left-0 right-0 z-50 text-white px-20 py-6 flex items-center justify-between transition-colors duration-300 ${
+    //   isScrolled ? 'bg-black/100' : 'bg-black/00'
+    // }`}>
+
+<nav
+  className={`fixed top-0 left-0 right-0 z-50 text-white px-20 py-6 flex items-center justify-between transition-all duration-300 ${
+    isScrolled ? 'shadow-lg' : 'bg-transparent'
+  }`}
+  style={
+    isScrolled
+      ? { background: 'linear-gradient(to bottom, #070707, #0f0f0f, #121212)' }
+      : {}
+  }
+>
+
       {/* Left side - Logo and Navigation */}
       <div className="flex items-center space-x-8">
         {/* Netflix Logo */}

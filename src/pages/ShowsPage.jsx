@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useShows } from '../context/ShowsContext';
 import ShowCard from '../components/ShowCard';
 
 function ShowsPage() {
   const { shows, loading, error } = useShows();
+
+     useEffect(() => {
+      document.title = "TV Shows| Netflix"; // Set the title for this page
+    }, []);
 
   if (loading) {
     return (

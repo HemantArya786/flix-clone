@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeroSection from "../components/HeroSection";
 import ShowCard from "../components/ShowCard";
 import NumericCard from "../components/NumericCard";
@@ -7,6 +7,10 @@ import { useShows } from "../context/ShowsContext";
 
 function HomePage() {
   const { shows, loading, error } = useShows();
+
+   useEffect(() => {
+    document.title = "Home | Netflix"; // Set the title for this page
+  }, []);
 
   if (loading) {
     return (
