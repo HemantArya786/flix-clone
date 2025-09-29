@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, Bell, ChevronDown, Edit, Monitor, User, HelpCircle, Globe } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import NetflixProfileIcons from "../../public/NetflixProfileIcons.jpeg"
 
 export default function Navbar() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -63,13 +64,13 @@ export default function Navbar() {
     // }`}>
 
 <nav
-  className={`fixed top-0 left-0 right-0 z-50 text-white px-20 py-6 flex items-center justify-between transition-all duration-300 ${
-    isScrolled ? 'shadow-lg' : 'bg-transparent'
+  className={`fixed top-0 left-0 right-0 z-50 text-white px-20 py-5 flex items-center justify-between transition-all duration-300 ${
+    isScrolled ? 'shadow-lg' : ''
   }`}
   style={
     isScrolled
       ? { background: 'linear-gradient(to bottom, #070707, #0f0f0f, #121212)' }
-      : {}
+      : { background: 'linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0))' }
   }
 >
 
@@ -88,7 +89,7 @@ export default function Navbar() {
               <img
                 src="https://images.ctfassets.net/y2ske730sjqp/821Wg4N9hJD8vs5FBcCGg/9eaf66123397cc61be14e40174123c40/Vector__3_.svg"
                 alt="Netflix"
-                className="h-6"
+                className="h-6 w-full"
               />
             </Link>
           )}
@@ -154,7 +155,7 @@ export default function Navbar() {
 
             {/* Sign In Button */}
             <button
-              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded transition-colors font-medium"
+              className="bg-red-600 hover:bg-red-700 text-white px-4 py-1 rounded transition-colors font-medium"
               onClick={() => navigate('/signin')}
             >
               Sign In
@@ -165,7 +166,7 @@ export default function Navbar() {
             {/* Search */}
             <div className="flex items-center">
           {isSearchOpen ? (
-            <div className="flex items-center border border-white bg-[#141415] bg-opacity-50">
+            <div className="flex items-center border-1 p-1 border-white bg-black bg-opacity-50">
               <Search 
                 size={20} 
                 className="ml-2 text-white cursor-pointer"
@@ -183,13 +184,14 @@ export default function Navbar() {
               className="p-1 hover:text-gray-300 transition-colors"
               onClick={() => setIsSearchOpen(true)}
             >
-              <Search size={20} />
+              <Search size={28} />
             </button>
           )}
         </div>
 
+
         {/* Children Link */}
-        <Link to={"/"} className="text-gray-300 hover:text-white transition-colors text-sm hidden sm:block">
+        <Link to={"/"} className="text-[#f8f8f8] hover:text-white transition-colors text-md font-light hidden sm:block">
           Children
         </Link>
 
@@ -199,7 +201,7 @@ export default function Navbar() {
             className="p-1 hover:text-gray-300 transition-colors"
             onClick={() => setIsNotificationOpen(!isNotificationOpen)}
           >
-            <Bell size={20} />
+            <Bell size={28} />
           </button>
 
           {/* Notification Dropdown */}
@@ -221,9 +223,14 @@ export default function Navbar() {
             className="flex items-center space-x-1 cursor-pointer hover:text-gray-300 transition-colors"
             onClick={() => setIsProfileOpen(!isProfileOpen)}
           >
-            <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center">
-              <span className="text-white text-sm font-medium">😊</span>
-            </div>
+         <div className="w-10 h-10  rounded flex items-center justify-center overflow-hidden">
+  <img
+    src={NetflixProfileIcons}
+    alt="icon"
+    className="w-8 h-8 object-cover rounded"
+  />
+</div>
+
             <ChevronDown size={16} className={`transition-transform ${isProfileOpen ? 'rotate-180' : ''}`} />
           </div>
 

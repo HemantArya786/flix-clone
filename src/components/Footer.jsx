@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className=" text-gray-400 py-16 px-8">
+    <footer className=" text-gray-400 py-16 bg-[#141414] px-8">
       <div className="max-w-6xl mx-auto">
         {/* Social Media Icons */}
         <div className="flex space-x-6 mb-8">

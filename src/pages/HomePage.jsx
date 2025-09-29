@@ -14,7 +14,7 @@ function HomePage() {
 
   if (loading) {
     return (
-      <div className="min-h-[100vh] flex items-center justify-center bg-black">
+      <div className="min-h-[100vh] flex items-center justify-center bg-[#141414]">
         <div className="text-white text-xl">Loading shows...</div>
       </div>
     );
@@ -22,14 +22,14 @@ function HomePage() {
 
   if (error) {
     return (
-      <div className="min-h-[100vh] flex items-center justify-center bg-black">
+      <div className="min-h-[100vh] flex items-center justify-center bg-[#141414]">
         <div className="text-red-500 text-xl">Error loading shows: {error}</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-[100vh] bg-black ">
+    <div className="min-h-[100vh] bg-[#141414]  ">
       <HeroSection />
 
       <MultiCarousel title="TV Action & Adventure">
