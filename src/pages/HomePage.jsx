@@ -41,6 +41,11 @@ function HomePage() {
           />
         ))}
       </MultiCarousel>
+       <div className="flex overflow-x-auto" >
+            {
+                [1,2,3,4,5,6,7,8,9,10].map((item, index) => (<NumericCard data={shows} index={item} key={index} />))
+            }
+        </div>
         <MultiCarousel title="TV Action & Adventure">
         {shows?.map((item, index) => (
           <ShowCard

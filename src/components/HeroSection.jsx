@@ -5,7 +5,7 @@ export default function HeroSection () {
   const [isMuted, setIsMuted] = useState(false);
 
   return (
-    <div className="relative w-full h-[90vh] bg-black overflow-hidden">
+    <div className="relative w-full h-[100vh] bg-black overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

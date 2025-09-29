@@ -12,6 +12,7 @@ import BrowseByLanguages from "./pages/BrowseByLanguages.jsx";
 import MyListPage from "./pages/MyListPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import Title from "./components/Title";
+import NewAndPopularPage from "./pages/NewAndPopularPage.jsx";
 
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
           <Route path="/shows" element={<ShowsPage />} />
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/games" element={<GamesPage />} />
+                    <Route path="/new-and-popular" element={<NewAndPopularPage />} />
+
           <Route path="/browse-by-langauage" element={<BrowseByLanguages />} />
           <Route path="/my-list" element={<MyListPage />} />
           <Route path="*" element={<NotFoundPage />} />
