@@ -9,7 +9,7 @@ const MultiCarousel = ({ children, title }) => {
     const calculateItemsPerScreen = () => {
       const screenWidth = window.innerWidth;
       const padding = 80; // 40px padding on each side (p-10 = 40px)
-      const cardWidth = 330; // ShowCard width (updated)
+      const cardWidth = 290; // ShowCard width (updated)
       const gap = 24; // Gap between items (6 * 4px = 24px in Tailwind)
 
       const availableWidth = screenWidth - padding;
@@ -67,7 +67,7 @@ const MultiCarousel = ({ children, title }) => {
 
   return (
     <section className="p-10">
-      {title && <h1 className="text-xl text-white py-5">{title}</h1>}
+      {title && <h1 className="text-3xl text-white py-5">{title}</h1>}
       <div className="group relative" style={{ overflow: 'visible' }}>
         <Carousel
           responsive={responsive}

@@ -13,6 +13,7 @@ export default function HoverCard() {
     handleVideoLoadStart
   } = useShow();
 
+
   return (
     <div className={`bg-zinc-900 w-[500px] h-[400px] absolute ${positionClass} top-0  rounded-lg shadow-2xl transform transition-all duration-300 ease-out animate-in fade-in zoom-in-95`}>
       <div className="relative h-[250px] overflow-hidden rounded-t-lg">
@@ -40,7 +41,7 @@ export default function HoverCard() {
       <div className="p-4 space-y-3 text-white">
         <div className="flex items-center space-x-2">
           <button className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
-            <Play className="w-4 h-4 text-black ml-1" fill="black" />
+            <Play className="w-4 h-4 text-black ml-1" fill="black"  />
           </button>
           <button className="w-8 h-8 border-2 border-gray-400 rounded-full flex items-center justify-center hover:border-white transition-colors">
             <Plus className="w-4 h-4 text-gray-300" />

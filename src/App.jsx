@@ -13,7 +13,7 @@ import MyListPage from "./pages/MyListPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import Title from "./components/Title";
 import NewAndPopularPage from "./pages/NewAndPopularPage.jsx";
-
+import MoviePlayerPage from "./pages/MoviePlayerPage.jsx";
 
 function App() {
   return (
@@ -28,7 +28,8 @@ function App() {
           <Route path="/shows" element={<ShowsPage />} />
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/games" element={<GamesPage />} />
-                    <Route path="/new-and-popular" element={<NewAndPopularPage />} />
+          <Route path="/new-and-popular" element={<NewAndPopularPage />} />
+          <Route path="/player" element={<MoviePlayerPage />} />
 
           <Route path="/browse-by-langauage" element={<BrowseByLanguages />} />
           <Route path="/my-list" element={<MyListPage />} />

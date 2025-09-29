@@ -11,8 +11,11 @@ const ShowCardContent = () => {
     handleMouseLeave
   } = useShow();
 
+
+
+
   return (
-    <div className="w-[300px] h-[200px] relative">
+    <div className="w-[320px] h-[200px] relative">
       {/* Main Image */}
       <div
         ref={cardRef}
@@ -23,7 +26,7 @@ const ShowCardContent = () => {
         <img
           src={data?.image}
           alt={data?.title}
-          className="w-full h-48 object-cover"
+          className="w-full h-48 object-cover rounded-lg"
         />
 
         {data?.isNew && (

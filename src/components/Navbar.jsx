@@ -24,7 +24,8 @@ export default function Navbar() {
 
   // Check if we're on landing page or signin page
   const isLandingPage =
-    location.pathname === "/" || location.pathname === "/signin";
+    location.pathname === "/" || location.pathname === "/signin" || location.pathname === "/player" ; 
+    
 
   // Close language dropdown when clicking outside
   useEffect(() => {
@@ -75,7 +76,7 @@ export default function Navbar() {
     // }`}>
 
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 text-white px-20 py-5 flex items-center justify-between transition-all duration-300 ${
+      className={`${location.pathname === "/player" && "hidden " } fixed top-0  left-0 right-0 z-50 text-white px-20 py-5 flex items-center justify-between transition-all duration-300 ${
         isScrolled ? "shadow-lg" : ""
       }`}
       style={

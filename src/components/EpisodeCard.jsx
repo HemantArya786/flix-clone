@@ -1,19 +1,25 @@
-import { useShow } from "../hooks/useShow";
+// import { useShow } from "../hooks/useShow";
 
-export default function EpisodeCard() {
-  const { data } = useShow();
+import {  useNavigate } from "react-router-dom";
+
+export default function EpisodeCard({data}) {
+
+
+const navigate = useNavigate()
+
+  // const { data } = useShow();
   return (
     <div className=" text-white  p-4 max-w-4xl mx-auto">
       <div className="flex items-center gap-4 border-b pb-5 border-gray-200">
         {/* Episode Number */}
         <div className="text-2xl font-light text-gray-300 min-w-[45px]">
-          3
+          {data?.episodeNumber}
         </div>
         
         {/* Thumbnail */}
-        <div className="relative w-40 h-20  rounded overflow-hidden flex-shrink-0">
+        <div className="relative w-40 h-20  rounded overflow-hidden flex-shrink-0" onClick={()=> navigate(`/player`)}>
           <img 
-            src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=face" 
+            src={data?.image} 
             alt="Episode thumbnail"
             className="w-full h-full object-cover"
           />
@@ -23,10 +29,10 @@ export default function EpisodeCard() {
         <div className="flex-1 min-w-0">
           <div className="flex justify-between items-start mb-2">
             <h3 className="text-lg font-medium text-white">
-              Episode 3
+              {data?.title}
             </h3>
             <span className="text-gray-400 text-sm ml-4 flex-shrink-0">
-              40m
+              {data?.duration}
             </span>
           </div>
           
