@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "../components/HeroSection";
 import ShowCard from "../components/ShowCard";
 import NumericCard from "../components/NumericCard";
+import MultiCarousel from "../components/MultiCarousel";
 import { useShows } from "../context/ShowsContext";
 
 function HomePage() {
@@ -27,20 +28,15 @@ function HomePage() {
     <div className="min-h-[100vh] bg-black ">
       <HeroSection />
 
-      <section className="p-10">
-        <h1 className="text-xl text-white py-5">TV Action & Adventure</h1>
-        <div className="flex gap-7">
-          {shows?.map((item, index) => (
-            <ShowCard
-              key={item.id || index}
-              data={item}
-              listTitle={"TV Action & Adventure"}
-            />
-          ))}
-        </div>
-      </section>
-
-      <NumericCard />
+      <MultiCarousel title="TV Action & Adventure">
+        {shows?.map((item, index) => (
+          <ShowCard
+            key={item.id || index}
+            data={item}
+            listTitle={"TV Action & Adventure"}
+          />
+        ))}
+      </MultiCarousel>
     </div>
   );
 }

@@ -5,3 +5,35 @@
   font-optical-sizing: auto;
   font-style: normal;
 }
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+/* React Multi Carousel styles */
+.react-multi-carousel-list {
+  overflow: visible !important;
+}
+
+.react-multi-carousel-track {
+  overflow: visible !important;
+}
+
+.react-multi-carousel-item {
+  overflow: visible !important;
+}
+
+/* Ensure hover cards can escape carousel bounds */
+.carousel-container {
+  overflow: visible !important;
+}
+
+/* Custom arrow positioning */
+.react-multiple-carousel__arrow {
+  z-index: 20;
+}
