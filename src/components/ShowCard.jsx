@@ -12,7 +12,7 @@ const ShowCardContent = () => {
   } = useShow();
 
   return (
-    <div className="w-[330px] h-[200px] relative">
+    <div className="w-[330px] h-[200px] relative z-10">
       {/* Main Image */}
       <div
         ref={cardRef}

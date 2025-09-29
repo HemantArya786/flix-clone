@@ -37,6 +37,42 @@ function HomePage() {
           />
         ))}
       </MultiCarousel>
+        <MultiCarousel title="TV Action & Adventure">
+        {shows?.map((item, index) => (
+          <ShowCard
+            key={item.id || index}
+            data={item}
+            listTitle={"TV Action & Adventure"}
+          />
+        ))}
+      </MultiCarousel>
+        <MultiCarousel title="TV Action & Adventure">
+        {shows?.map((item, index) => (
+          <ShowCard
+            key={item.id || index}
+            data={item}
+            listTitle={"TV Action & Adventure"}
+          />
+        ))}
+      </MultiCarousel>
+        <MultiCarousel title="TV Action & Adventure">
+        {shows?.map((item, index) => (
+          <ShowCard
+            key={item.id || index}
+            data={item}
+            listTitle={"TV Action & Adventure"}
+          />
+        ))}
+      </MultiCarousel>
+        <MultiCarousel title="TV Action & Adventure">
+        {shows?.map((item, index) => (
+          <ShowCard
+            key={item.id || index}
+            data={item}
+            listTitle={"TV Action & Adventure"}
+          />
+        ))}
+      </MultiCarousel>
     </div>
   );
 }

@@ -18,22 +18,43 @@
 /* React Multi Carousel styles */
 .react-multi-carousel-list {
   overflow: visible !important;
+  z-index: 20 !important;
 }
 
 .react-multi-carousel-track {
   overflow: visible !important;
+  z-index: 20 !important;
 }
 
 .react-multi-carousel-item {
   overflow: visible !important;
+  z-index: 20 !important;
 }
 
 /* Ensure hover cards can escape carousel bounds */
 .carousel-container {
   overflow: visible !important;
+  z-index: 20 !important;
 }
 
 /* Custom arrow positioning */
 .react-multiple-carousel__arrow {
-  z-index: 20;
+  z-index: 10000 !important;
+}
+
+/* Fix z-index for hovered ShowCards */
+.react-multi-carousel-item:hover {
+  z-index: 9999 !important;
+  position: relative;
+}
+
+/* Ensure hovered items appear above siblings */
+.react-multi-carousel-track .react-multi-carousel-item:hover {
+  z-index: 9999 !important;
+}
+
+/* Ensure entire carousel container gets elevated on hover */
+.carousel-container:has(.react-multi-carousel-item:hover) {
+  z-index: 9998 !important;
+  position: relative;
 }

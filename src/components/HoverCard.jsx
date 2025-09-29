@@ -14,7 +14,7 @@ export default function HoverCard() {
   } = useShow();
 
   return (
-    <div className={`bg-zinc-900 w-[500px] h-[400px] absolute ${positionClass} top-0 z-50 rounded-lg shadow-2xl transform transition-all duration-300 ease-out animate-in fade-in zoom-in-95`}>
+    <div className={`bg-zinc-900 w-[500px] h-[400px] absolute ${positionClass} top-0  rounded-lg shadow-2xl transform transition-all duration-300 ease-out animate-in fade-in zoom-in-95`}>
       <div className="relative h-[250px] overflow-hidden rounded-t-lg">
         {data?.video && !videoError ? (
           <video

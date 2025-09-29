@@ -9,7 +9,7 @@ const MultiCarousel = ({ children, title }) => {
     const calculateItemsPerScreen = () => {
       const screenWidth = window.innerWidth;
       const padding = 80; // 40px padding on each side (p-10 = 40px)
-      const cardWidth = 300; // ShowCard width
+      const cardWidth = 330; // ShowCard width (updated)
       const gap = 24; // Gap between items (6 * 4px = 24px in Tailwind)
 
       const availableWidth = screenWidth - padding;
@@ -42,7 +42,8 @@ const MultiCarousel = ({ children, title }) => {
   const CustomLeftArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      style={{ zIndex: 10001 }}
       aria-label="Previous"
     >
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,7 +55,8 @@ const MultiCarousel = ({ children, title }) => {
   const CustomRightArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      style={{ zIndex: 10001 }}
       aria-label="Next"
     >
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
