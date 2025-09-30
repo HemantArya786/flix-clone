@@ -1,22 +1,37 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Play, Plus, ThumbsUp, X, Volume2, VolumeX } from "lucide-react";
 import { useShow } from "../hooks/useShow";
+import { useNavigate } from "react-router-dom";
 
 export default function PreviewHeroSection() {
   const { data, closeShowPreview } = useShow();
   const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
+  const navigate = useNavigate();
 
   const toggleMute = () => {
-    setIsMuted(!isMuted);
+    setIsMuted((prev) => !prev);
   };
+
+  // Keep video mute state in sync
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
 
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-      >
-      <video src={data?.video} autoPlay />
+      {/* Background Video */}
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat">
+        <video
+          ref={videoRef}
+          src={data?.video}
+          autoPlay
+          loop
+          muted={isMuted} // ensure initial sync
+          className="w-full h-full object-cover"
+        />
       </div>
 
       {/* Close ShowPreview Button */}
@@ -27,17 +42,9 @@ export default function PreviewHeroSection() {
         <X size={20} />
       </button>
 
-      {/* Mute/Unmute Button */}
-      <button
-        onClick={toggleMute}
-        className="absolute top-4 right-16 z-50 w-8 h-8 bg-black bg-opacity-50 rounded-full flex items-center justify-center hover:bg-opacity-70 transition-all duration-200"
-      >
-        {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-      </button>
-
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col justify-end min-h-screen p-8 md:p-16">
-        <div className="max-w-2xl">
+      <div className="relative z-10 flex  flex-col justify-end min-h-screen p-8 md:p-16">
+        <div className="max-w-9xl">
           {/* Title */}
           <div className="mb-6">
             <h1 className="text-6xl md:text-8xl font-bold tracking-tight">
@@ -46,16 +53,32 @@ export default function PreviewHeroSection() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex items-center gap-4 mb-8">
-            <button className="flex items-center gap-2 bg-white text-black px-8 py-3 rounded-md font-semibold hover:bg-gray-200 transition-colors duration-200">
-              <Play size={20} fill="black" />
-              Play
-            </button>
-            <button className="w-12 h-12 border-2 border-gray-400 rounded-full flex items-center justify-center hover:border-white transition-colors duration-200">
-              <Plus size={24} />
-            </button>
-            <button className="w-12 h-12 border-2 border-gray-400 rounded-full flex items-center justify-center hover:border-white transition-colors duration-200">
-              <ThumbsUp size={20} />
+          <div className="flex items-center  justify-between mb-8">
+            {/* Left Side Buttons */}
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => navigate("/player")}
+                className="flex items-center gap-2 bg-white text-black px-8 py-3 rounded-md font-semibold hover:bg-gray-200 transition-colors duration-200"
+              >
+                <Play size={20} fill="black" />
+                Play
+              </button>
+
+              <button className="w-12 h-12 border-2 border-gray-400 rounded-full flex items-center justify-center hover:border-white transition-colors duration-200">
+                <Plus size={24} />
+              </button>
+
+              <button className="w-12 h-12 border-2 border-gray-400 rounded-full flex items-center justify-center hover:border-white transition-colors duration-200">
+                <ThumbsUp size={20} />
+              </button>
+            </div>
+
+            {/* Right Side Volume Button */}
+            <button
+              onClick={toggleMute}
+              className="w-12 h-12 border-2 border-gray-400 rounded-full flex items-center justify-center hover:border-white transition-colors duration-200"
+            >
+              {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
             </button>
           </div>
 

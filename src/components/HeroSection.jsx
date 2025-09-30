@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function HeroSection () {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
+
+  const navigate = useNavigate()
 
   return (
     <div className="relative w-full h-[100vh] bg-black overflow-hidden">
@@ -38,7 +41,7 @@ export default function HeroSection () {
         {/* Control buttons */}
         <div className="flex items-center gap-4 mb-8">
           <button 
-            onClick={() => setIsPlaying(!isPlaying)}
+            onClick={() => navigate("/player") }
             className="flex items-center gap-3 bg-white text-black px-8 py-3 rounded font-semibold hover:bg-gray-200 transition-colors"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

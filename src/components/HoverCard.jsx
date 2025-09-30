@@ -1,6 +1,7 @@
 import { Play, Plus, ThumbsUp, ChevronDown, Divide } from "lucide-react";
 import ShowPreview from "./ShowPreview";
 import { useShow } from "../hooks/useShow";
+import { useNavigate } from "react-router-dom";
 
 export default function HoverCard() {
   const {
@@ -12,6 +13,8 @@ export default function HoverCard() {
     handleVideoError,
     handleVideoLoadStart
   } = useShow();
+
+  const navigate = useNavigate()
 
 
   return (
@@ -40,7 +43,7 @@ export default function HoverCard() {
 
       <div className="p-4 space-y-3 text-white">
         <div className="flex items-center space-x-2">
-          <button className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+          <button onClick={()=> navigate("/player")} className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
             <Play className="w-4 h-4 text-black ml-1" fill="black"  />
           </button>
           <button className="w-8 h-8 border-2 border-gray-400 rounded-full flex items-center justify-center hover:border-white transition-colors">
