@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import NetflixProfileIcons from "../../public/NetflixProfileIcons.jpeg";
+import HeadBar from "./HeadBar";
 
 export default function Navbar() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -76,7 +77,7 @@ export default function Navbar() {
     // }`}>
 
     <nav
-      className={`${location.pathname === "/player" && "hidden " } fixed top-0  left-0 right-0 z-50 text-white px-20 py-5 flex items-center justify-between transition-all duration-300 ${
+      className={`${location.pathname === "/player" && "hidden " } fixed top-0  left-0 right-0 z-50   text-white px-20 py-5 flex items-center justify-between transition-all duration-300 ${
         isScrolled ? "shadow-lg" : ""
       }`}
       style={
@@ -110,6 +111,9 @@ export default function Navbar() {
               />
             </Link>
           )}
+
+
+          
         </div>
 
         {/* Navigation Links - Hidden on landing pages */}
@@ -366,6 +370,28 @@ export default function Navbar() {
           </>
         )}
       </div>
+
+{/* 
+below navbar
+       <div
+      className={`${
+        location.pathname === "/player" && "hidden"
+      } fixed top-20  left-0 right-0 z-50 h-16 transition-all duration-300 ${
+        isScrolled ? "shadow-lg" : ""
+      }`}
+      style={
+        isScrolled
+          ? {
+              background: "linear-gradient(to bottom, #070707, #0f0f0f, #121212)",
+            }
+          : {
+              background:
+                "linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0))",
+            }
+      }
+    /> */}
+    
     </nav>
+    
   );
 }
