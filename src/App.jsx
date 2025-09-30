@@ -8,12 +8,20 @@ import Navbar from "./components/Navbar.jsx";
 import ShowsPage from "./pages/ShowsPage.jsx";
 import MoviesPage from "./pages/MoviesPage.jsx";
 import GamesPage from "./pages/GamesPage.jsx";
-import BrowseByLanguages from "./pages/BrowseByLanguages.jsx";
 import MyListPage from "./pages/MyListPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
+import BrowseByLanguages from "./pages/BrowseByLanguages.jsx";
+
 import Title from "./components/Title";
 import NewAndPopularPage from "./pages/NewAndPopularPage.jsx";
 import MoviePlayerPage from "./pages/MoviePlayerPage.jsx";
+import ComingSoonPage from "./pages/ComingSoonPage.jsx";
+import UnderConstructionPage from "./pages/UnderConstructionPage.jsx";
+import Account from "./pages/Account.jsx";
+import HelpCenter from "./pages/HelpCenter.jsx";
+import TransferProfile from "./pages/TransferProfile.jsx";
+import ManagePage from "./pages/ManageProfile.jsx";
+import KidsPage from "./pages/KidsPage.jsx";
 
 function App() {
   return (
@@ -27,12 +35,22 @@ function App() {
           <Route path="/signin" element={<SigninPage />} />
           <Route path="/shows" element={<ShowsPage />} />
           <Route path="/movies" element={<MoviesPage />} />
-          {/* <Route path="/games" element={<GamesPage />} /> */}
+          <Route path="/games" element={<GamesPage />} />
           <Route path="/new-and-popular" element={<NewAndPopularPage />} />
           <Route path="/player" element={<MoviePlayerPage />} />
+          <Route path="/coming-soon" element={<ComingSoonPage />} />
+          <Route path="/kids" element={<KidsPage/>}/>
+          <Route
+            path="/under-construction"
+            element={<UnderConstructionPage />}
+          />
+          <Route path="/account" element={<Account />} />
+          <Route path="/help-center" element={<HelpCenter />} />
+          <Route path="/transfer-profile" element={<TransferProfile />} />
+          <Route path="/manage-profile" element={<ManagePage />} />
 
-          {/* <Route path="/browse-by-langauage" element={<BrowseByLanguages />} /> */}
-          {/* <Route path="/my-list" element={<MyListPage />} /> */}
+          <Route path="/browse-by-langauage" element={<BrowseByLanguages />} />
+          <Route path="/my-list" element={<MyListPage />} />
           <Route path="*" element={<NotFoundPage />} />
           {/* <Route path="/home" element={<HomePage />} /> */}
           <Route

@@ -137,12 +137,12 @@ export default function Navbar() {
             >
               Movies
             </Link>
-            {/* <Link
+            <Link
               to={"games"}
               className="text-gray-300 hover:text-white transition-colors"
             >
               Games
-            </Link> */}
+            </Link>
             <Link
               to={"/new-and-popular"}
               className="text-gray-300 hover:text-white transition-colors"
@@ -156,7 +156,7 @@ export default function Navbar() {
               My List
             </Link>
             <Link
-              to={"/browse-by-language"}
+              to={"/browse-by-langauage"}
               className="text-gray-300 hover:text-white transition-colors"
             >
               Browse by Languages
@@ -244,7 +244,7 @@ export default function Navbar() {
 
             {/* Children Link */}
             <Link
-              to={"/"}
+              to={"/kids"}
               className="text-[#f8f8f8] hover:text-white transition-colors text-md font-light hidden sm:block"
             >
               Children
@@ -300,7 +300,8 @@ export default function Navbar() {
               {isProfileOpen && (
                 <div className="absolute right-0 top-full mt-2 w-64 bg-black/80  bg-opacity-10 backdrop-blur-sm border border-gray-700 rounded-md shadow-lg z-50">
                   {/* Children Profile */}
-                  <div
+          <Link to={"/kids"}>
+                    <div
                     className="flex items-center space-x-3 px-4 py-3  cursor-pointer "
                     onClick={() => setIsProfileOpen(false)}
                   >
@@ -309,45 +310,57 @@ export default function Navbar() {
                     </div>
                     <span className="text-white text-sm hover:underline">Children</span>
                   </div>
+          </Link>
 
                   {/* Menu Items */}
                   <div className="py-2">
+                                     <Link to={"manage-profile"}>
+
                     <div
                       className="flex items-center space-x-3 px-4 py-2 hover:underline
   cursor-pointer"
                       onClick={() => setIsProfileOpen(false)}
                     >
-                      <Edit size={24} className="text-gray-400" />
+                       <Edit size={24} className="text-gray-400" />
                       <span className="text-white text-sm">
                         Manage Profiles
                       </span>
                     </div>
+                                       </Link>
 
+    <Link to={"/transfer-profile"}> 
                     <div
                       className="flex items-center space-x-3 px-4 py-2 hover:underline  cursor-pointer"
                       onClick={() => setIsProfileOpen(false)}
                     >
-                      <Monitor size={24} className="text-gray-400" />
-                      <span className="text-white text-sm">
+                 <Monitor size={24} className="text-gray-400" />
+                        <span className="text-white text-sm">
                         Transfer Profile
                       </span>
+                      
                     </div>
+                                          </Link>
 
-                    <div
+
+               <Link to={"/account"}>
+                     <div
                       className="flex items-center space-x-3 px-4 py-2 hover:underline cursor-pointer"
                       onClick={() => setIsProfileOpen(false)}
                     >
                       <User size={24} className="text-gray-400" />
                       <span className="text-white text-sm">Account</span>
                     </div>
+               </Link>
 
-                    <div
+                 <Link to={"/help-center"}>
+                     <div
                       className="flex items-center space-x-3 px-4 py-2 hover:underline  cursor-pointer"
                       onClick={() => setIsProfileOpen(false)}
                     >
                       <HelpCircle size={24} className="text-gray-400" />
                       <span className="text-white text-sm">Help Centre</span>
                     </div>
+                 </Link>
                   </div>
 
                   {/* Sign Out */}

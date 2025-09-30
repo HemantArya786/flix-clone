@@ -1,11 +1,18 @@
-import React from 'react'
+
+
+
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function BrowseByLanguages() {
-  return (
-    <div className='border'>
-      BrowseByLanguages
-    </div>
-  )
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // redirect to Coming Soon page when user visits this page
+    navigate("/coming-soon");
+  }, [navigate]);
+
+  return null; // nothing renders since we redirect immediately
 }
 
-export default BrowseByLanguages
+export default BrowseByLanguages;
