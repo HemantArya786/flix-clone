@@ -8,6 +8,7 @@ import { useShows } from "../context/ShowsContext";
 function HomePage() {
   const { shows, loading, error } = useShows();
 
+
    useEffect(() => {
     document.title = "Home | Netflix"; // Set the title for this page
   }, []);
@@ -30,7 +31,7 @@ function HomePage() {
 
   return (
     <div className="min-h-[100vh] bg-[#141414]  ">
-      <HeroSection />
+      <HeroSection data={shows[0]} />
 
       <MultiCarousel title="TV Action & Adventure">
         {shows?.map((item, index) => (

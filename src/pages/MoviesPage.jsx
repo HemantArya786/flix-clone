@@ -32,7 +32,7 @@ function MoviesPage() {
 
   return (
     <div className="min-h-[100vh] bg-[#141414]  ">
-      <HeroSection />
+      <HeroSection data={shows[3]} />
 
       <MultiCarousel title="TV Action & Adventure">
         {shows?.map((item, index) => (
