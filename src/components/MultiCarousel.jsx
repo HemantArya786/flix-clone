@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-const MultiCarousel = ({ children, title }) => {
+const MultiCarousel = ({ children, title , containerClass}) => {
   const [responsive, setResponsive] = useState({});
 
   useEffect(() => {
@@ -66,7 +66,7 @@ const MultiCarousel = ({ children, title }) => {
   );
 
   return (
-    <section className="p-10">
+    <section className={`p-10 ${containerClass}`}>
       {title && <h1 className="text-3xl text-white py-5">{title}</h1>}
       <div className="group relative" style={{ overflow: 'visible' }}>
         <Carousel

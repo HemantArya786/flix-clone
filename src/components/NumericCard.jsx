@@ -11,6 +11,7 @@ import {
     Rank9Svg,
     Rank10Svg
 } from './RankingSvgs';
+import ShowCard from "./ShowCard.jsx";
 
 const NumericCard = ({data, index}) => {
     const rankingSvgs = {
@@ -27,11 +28,17 @@ const NumericCard = ({data, index}) => {
     };
 
     return (
-        <div className=" min-w-[300px] max-w-[300px], h-[220px] flex" >
+        <div className=" min-w-[400px] max-w-[300px], h-[220px] flex" >
             <div className="max-w-[120px] max-h-[220px]" >
                  {rankingSvgs[index]}
             </div>
-                <img src={data?.[index]?.image} className="h-[220px] w-[160px] object-cover  rounded-tr-lg rounded-br-lg " />
+
+            <ShowCard
+                data={data?.[index]}
+                listTitle={"TV Action & Adventure"}
+                customImageHeight={220}
+                isNumeric
+            />
         </div>
     );
 };

@@ -2,7 +2,7 @@ import HoverCard from "./HoverCard";
 import { ShowProvider } from "../contexts/ShowContext";
 import { useShow } from "../hooks/useShow";
 
-const ShowCardContent = () => {
+const ShowCardContent = ({customImageHeight, isNumeric}) => {
   const {
     data,
     isHovered,
@@ -12,10 +12,10 @@ const ShowCardContent = () => {
   } = useShow();
 
 
-
+console.log(customImageHeight, "custom")
 
   return (
-    <div className="w-[320px] h-[200px] relative">
+    <div className={`${isNumeric ? 'w-[180px]' : 'w-[320px]'} h-[200px] relative`}>
       {/* Main Image */}
       <div
         ref={cardRef}
@@ -26,7 +26,8 @@ const ShowCardContent = () => {
         <img
           src={data?.image}
           alt={data?.title}
-          className="w-full h-48 object-cover rounded-lg"
+          className={`w-full ${customImageHeight ? '' : 'h-48'} object-cover rounded-lg`}
+          style={customImageHeight ? { height: `${customImageHeight}px` } : {}}
         />
 
         {data?.isNew && (
@@ -42,10 +43,11 @@ const ShowCardContent = () => {
   );
 };
 
-const ShowCard = ({data }) => {
+const ShowCard = ({data, customImageHeight, isNumeric }) => {
+    console.log(data,customImageHeight, "cih")
   return (
     <ShowProvider data={data}>
-      <ShowCardContent />
+      <ShowCardContent customImageHeight={customImageHeight} isNumeric={isNumeric} />
     </ShowProvider>
   );
 };

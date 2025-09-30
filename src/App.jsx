@@ -27,12 +27,12 @@ function App() {
           <Route path="/signin" element={<SigninPage />} />
           <Route path="/shows" element={<ShowsPage />} />
           <Route path="/movies" element={<MoviesPage />} />
-          <Route path="/games" element={<GamesPage />} />
+          {/* <Route path="/games" element={<GamesPage />} /> */}
           <Route path="/new-and-popular" element={<NewAndPopularPage />} />
           <Route path="/player" element={<MoviePlayerPage />} />
 
-          <Route path="/browse-by-langauage" element={<BrowseByLanguages />} />
-          <Route path="/my-list" element={<MyListPage />} />
+          {/* <Route path="/browse-by-langauage" element={<BrowseByLanguages />} /> */}
+          {/* <Route path="/my-list" element={<MyListPage />} /> */}
           <Route path="*" element={<NotFoundPage />} />
           {/* <Route path="/home" element={<HomePage />} /> */}
           <Route

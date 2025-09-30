@@ -137,12 +137,12 @@ export default function Navbar() {
             >
               Movies
             </Link>
-            <Link
+            {/* <Link
               to={"games"}
               className="text-gray-300 hover:text-white transition-colors"
             >
               Games
-            </Link>
+            </Link> */}
             <Link
               to={"/new-and-popular"}
               className="text-gray-300 hover:text-white transition-colors"
